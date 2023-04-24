@@ -1,0 +1,45 @@
+INSERT INTO forge.tipo_usuario (nombre) VALUES ('Administrador');
+INSERT INTO forge.tipo_usuario (nombre) VALUES ('Profesor');
+INSERT INTO forge.tipo_usuario (nombre) VALUES ('Estudiante');
+
+INSERT INTO forge.tipo_doc (tipo_doc, nombre) VALUES ('CC', 'Cédula de Ciudadanía');
+
+INSERT INTO forge.estado (nombre) VALUES ('Activo');
+INSERT INTO forge.estado (nombre) VALUES ('Inactivo');
+INSERT INTO forge.estado (nombre) VALUES ('Bloqueado');
+
+INSERT INTO forge.nivel (nombre) VALUES ('Basico');
+INSERT INTO forge.nivel (nombre) VALUES ('Intermedio');
+INSERT INTO forge.nivel (nombre) VALUES ('Avanzado');
+
+INSERT INTO forge.tipo_recurso (nombre) VALUES ('Video');
+INSERT INTO forge.tipo_recurso (nombre) VALUES ('Imagen');
+INSERT INTO forge.tipo_recurso (nombre) VALUES ('Documento');
+
+INSERT INTO forge.categoria (nombre) VALUES ('Gestion de Proyectos');
+INSERT INTO forge.categoria (nombre) VALUES ('Arquitectura y Espacios');
+INSERT INTO forge.categoria (nombre) VALUES ('Derecho');
+INSERT INTO forge.categoria (nombre) VALUES ('Contabilidad y tesorería');
+INSERT INTO forge.categoria (nombre) VALUES ('Desarrollo Web');
+INSERT INTO forge.categoria (nombre) VALUES ('Programacion');
+INSERT INTO forge.categoria (nombre) VALUES ('Arquitectura de Software');
+INSERT INTO forge.categoria (nombre) VALUES ('Salud Mental');
+
+
+INSERT INTO forge.facultad (nombre) VALUES ('Administración de Empresas');
+INSERT INTO forge.facultad (nombre) VALUES ('Arquitectura');
+INSERT INTO forge.facultad (nombre) VALUES ('Comunicación Social');
+INSERT INTO forge.facultad (nombre) VALUES ('Contaduría Pública');
+INSERT INTO forge.facultad (nombre) VALUES ('Derecho');
+INSERT INTO forge.facultad (nombre) VALUES ('Ingeniería Industrial');
+INSERT INTO forge.facultad (nombre) VALUES ('Ingeniería de Sistemas');
+INSERT INTO forge.facultad (nombre) VALUES ('Ingeniería de Software');
+INSERT INTO forge.facultad (nombre) VALUES ('Psicología');
+
+INSERT INTO forge.usuario (documento, nombre, correo, telefono, password, fecha, api_token, id_tipo_usuario, id_tipo_doc, id_estado)
+VALUES ('999999999', 'Administrador', 'admin@forge.com', '1234567890', '$2y$10$BxWZKPF6WUxy6j.TEqwAmeTy9XaijUYJNk7ZwzlCqDDRiuYuCqSSy', DEFAULT, null, 1, 1, 1);
+/*contraseña = forge.Admin*/
+
+INSERT INTO forge.usuario (documento, nombre, correo, telefono, password, fecha, api_token, id_tipo_usuario, id_tipo_doc, id_estado)
+VALUES ('888888888', 'Profesor', 'profesor@forge.com', '1234567891', '$2y$10$C0uLsTTpI5atj7UPE9jq9uAHU3THSzqzZQBQRJxag.wncNLtUC3Wm', DEFAULT, null, 2, 1, 1);
+/*contraseña = forge.profesor*/

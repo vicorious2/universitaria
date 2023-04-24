@@ -1,0 +1,71 @@
+<app-menu></app-menu>
+
+<div class="container-xxl" style="margin-top: 80px;">
+    <div class="row">
+        <div class="col-sm-4">
+            
+            <ul class="list-group">
+                <li class="list-group-item" aria-current="true">Cursos
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item" style="cursor: pointer;" (click)="filterGeneral()">Todos los Cursos</li>
+                        <li *ngIf="typeUser == '2'" class="list-group-item" style="cursor: pointer;" (click)="onSubmitCourse()">CREAR CURSOS</li>
+                        <li *ngIf="typeUser == '2'" class="list-group-item" style="cursor: pointer;" (click)="onSubmitClass()">CREAR CLASES</li>
+                      </ul>
+                </li>
+                <li class="list-group-item">Categorias
+                    <ul class="list-group list-group-flush">
+                        <a class="list-group-item" style="cursor: pointer;" *ngFor="let categoria of listCategorias" (click)="filter('categoria', categoria.id_categoria, categoria.nombre)">{{ categoria.nombre }}</a>
+                    </ul>
+                </li>
+                <li class="list-group-item">Nivel
+                    <ul class="list-group list-group-flush">
+                        <a class="list-group-item" style="cursor: pointer;" *ngFor="let nivel of listNiveles" (click)="filter('nivel', nivel.id_nivel, nivel.nombre)">{{ nivel.nombre }}</a>
+                    </ul>
+                </li>
+                <li class="list-group-item">Areas
+                    <ul class="list-group list-group-flush">
+                        <a class="list-group-item" style="cursor: pointer;" *ngFor="let area of listAreas" (click)="filter('area', area.id_facultad, area.nombre)">{{ area.nombre }}</a>
+                    </ul>
+                </li>
+              </ul>
+        </div>
+
+        <div class="col-sm-8">
+
+            <div class="row row-cols-1 row-cols-md-3 g-4">
+                
+                <div class="col" *ngFor="let curso of listCursos">
+                    <div class="card h-100 text-center">
+                        <img src="assets/img/cursos.jpg" class="card-img-top" alt="..." style="opacity: 0.2;">
+                        <div class="card-img-overlay">
+                            <h2 class="card-title">
+                                {{ curso.nombre }}
+                            </h2>
+                            <p class="card-text">{{ curso.short_descript }}</p>
+                        </div>
+                        <div class="card-body">
+                            <br>
+                            <button *ngIf="activarButton" type="button" class="btn btn-outline-primary position-relative" (click)="goToClass(curso.id_curso)">Ingresar</button>
+                        </div>
+                        <div class="card-footer bg-transparent position-relative" style="color: #17A2B8 !important;" >
+                            {{ curso.categorias }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div>
+            <br>
+
+            <!-- <mat-paginator [length]="100"
+              [pageSize]="10"
+              [pageSizeOptions]="[5, 10, 25, 100]"
+              aria-label="Select page">
+            </mat-paginator> -->
+
+        </div>
+
+    </div>
+</div>

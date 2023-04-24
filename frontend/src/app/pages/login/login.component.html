@@ -1,0 +1,48 @@
+<app-menu></app-menu>
+<section class="vh-100">
+    <div class="container py-5 h-100">
+        <div class="row d-flex align-items-center justify-content-center h-100">
+            <div class="col-md-8 col-lg-7 col-xl-6">
+                <img src="assets/img/login.jpg" class="img-fluid" alt="">
+            </div>
+            <div class="col-md-7 col-lg-5 col-xl-5 offset-xl-1">
+                <div class="text-center">
+                    <img src="assets/img/logo.png" class="img-fluid w-50" style="cursor: pointer;" alt="logo" routerLink="/">
+                </div>
+                <br>
+                <form [formGroup]="loginForm" class="login-form" (ngSubmit)="onFormSubmit()">
+
+                    <mat-form-field class="w-100" appearance="outline">
+                        <mat-label>Tipo de Usuario</mat-label>
+                        <mat-select formControlName="tipoUsuario" name="tipoUsuario" required>
+                            <mat-option *ngFor="let type of identificationTypes" [value]="type.id_tipo_usuario">
+                                {{type.nombre}}
+                            </mat-option>
+                        </mat-select>
+                        <mat-hint></mat-hint>
+                    </mat-form-field>
+
+                    <mat-form-field class="w-100" appearance="outline">
+                        <mat-label>Usuario</mat-label>
+                        <input matInput id="usuario" placeholder="" name="usuario" formControlName="usuario" required>
+                        <mat-icon matSuffix>person</mat-icon>
+                        <mat-hint></mat-hint>
+                    </mat-form-field>
+
+                    <mat-form-field class="w-100" appearance="outline">
+                        <mat-label>Contraseña</mat-label>
+                        <input matInput type="password" id="contrasena" placeholder="" name="contrasena"
+                            formControlName="contrasena" required>
+                        <mat-icon matSuffix>password</mat-icon>
+                        <mat-hint></mat-hint>
+                    </mat-form-field>
+                    <mat-error> {{ messageError }} </mat-error>
+                    <br>
+                    <button mat-flat-button id="login-button" type="submit" color="primary-blue"
+                        class="btn btn-primary w-100">Ingresar</button>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,147 @@
+<app-menu></app-menu>
+
+<div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel" style="padding-top: 68px;">
+    <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active"
+            aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    </div>
+    <div class="carousel-inner">
+        <div class="carousel-item active" data-bs-interval="10000">
+            <div class="d-flex justify-content-center">
+                <img src="assets/img/banner1.jpg" style="max-height: 550px;max-width: 1420px; object-fit: contain;" class="d-block " alt="...">
+            </div>
+            <div class="carousel-caption d-none d-md-block">
+                <!-- <h5>First slide label</h5>
+                <p>Some representative placeholder content for the first slide.</p> -->
+            </div>
+        </div>
+        <div class="carousel-item" data-bs-interval="10000">
+            <div class="d-flex justify-content-center">
+                <img src="assets/img/banner2.jpg" style="max-height: 550px;max-width: 1420px; object-fit: contain;" class="d-block " alt="...">
+            </div>
+            <div class="carousel-caption d-none d-md-block">
+                <!-- <h5>Second slide label</h5>
+                <p>Some representative placeholder content for the second slide.</p> -->
+            </div>
+        </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
+</div>
+<br>
+<br>
+<div class="container-fluid p-0 m-0">
+    <div class="text-center">
+        <h1 class="titulo">CURSOS NUEVOS</h1>
+    </div>
+</div>
+<br>
+<br>
+<div class="container">
+
+    <div class="row row-cols-1 row-cols-md-2 g-4">
+
+        <div class="col" *ngFor="let curso of listCursos">
+            <div class="card" style="max-width: 540px;">
+                <div class="row g-0">
+                    <div class="col-md-4">
+                        <img src="assets/img/cursos.jpg" class="img-fluid rounded-start" alt="...">
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <h4 class="card-title" style="color:#17A2B8 !important">{{ curso.nombre }}</h4>
+                            <p class="card-text text-muted">{{ curso.short_descript }}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+<br>
+<br>
+<div class="container-fluid p-0 m-0">
+    <div class="text-center">
+        <h1 class="titulo">BENEFICIOS DE ESTUDIAR</h1>
+        <h1 class="titulo">CON NOSOTROS</h1>
+    </div>
+</div>
+<br>
+<br>
+
+<div class="section features-list d-none d-sm-block">
+    <div class="container">
+        <ul class="row">
+            <li class="col-md-6">
+                <i class="fa fa-smile-o"></i>
+                <h3>Aprende a tu ritmo</h3>
+                <p>Disfruta aprendiendo desde casa, sin horarios y a tu ritmo. Tú decides cuándo seguir con cada unidad.
+                </p>
+            </li>
+            <li class="col-md-6">
+                <i class="fa fa-laptop"></i>
+                <h3>Ponte en primera fila</h3>
+                <p>La alta calidad de los vídeos permitirá que no te pierdas ni un solo detalle. Gracias al acceso
+                    ilimitado, podrás ver las lecciones todas las veces que necesites para perfeccionar tus habilidades.
+                </p>
+            </li>
+            <li class="col-md-6">
+                <i class="fa fa-thumbs-o-up"></i>
+                <h3>Aprende de los mejores profesionales</h3>
+                <p>Aprende los métodos y técnicas más útiles con los mejores profesionales del sector.</p>
+            </li>
+            <li class="col-md-6">
+                <i class="a-icon-user-bookmark"></i>
+                <h3>Conoce a profesores expertos</h3>
+                <p>Cada profesor te transmitirá sus conocimientos con pasión, ofreciéndote explicaciones claras y una
+                    perspectiva profesional en cada lección.</p>
+            </li>
+        </ul>
+
+    </div>
+</div>
+
+<br>
+<br>
+<hr class="border-primary border-3 w-75 text-center" style=" margin: auto;">
+<br>
+
+<footer class="text-center">
+
+    <div class="container pt-4">
+
+        <section class="mb-4">
+         
+        <a target="_blank" href="https://www.facebook.com/universitariaco/" class="btn btn-link btn-floating btn-lg text-dark m-1">
+            <img src="assets/img/svg/facebook.svg" alt="" style="height: 25px;">
+        </a>
+        <a target="_blank" href="https://www.youtube.com/channel/UCy32aUKfACpU4cvE1TtmgxA/featured" class="btn btn-link btn-floating btn-lg text-dark m-1">
+            <img src="assets/img/svg/youtube.svg" alt="" style="height: 25px">
+        </a>
+        <a target="_blank" href="https://www.instagram.com/universitaria_oficial/" class="btn btn-link btn-floating btn-lg text-dark m-1">
+            <img src="assets/img/svg/instagram.svg" alt="" style="height: 25px">
+        </a>
+        <!-- <a href="#!" class="btn btn-link btn-floating btn-lg text-dark m-1">
+            <img src="assets/img/svg/linkedin-brands.svg" alt="" style="height: 25px">
+        </a> -->
+        <a target="_blank" href="https://api.whatsapp.com/send?phone=573218735489&text=Hola%20Universitaria%20de%20Colombia" class="btn btn-link btn-floating btn-lg text-dark m-1">
+            <img src="assets/img/svg/whatsapp.svg" alt="" style="height: 25px">
+        </a>
+    
+        </section>
+      </div>
+
+    <div class="text-center p-3 bg-light">
+        @ Todos los derechos reservados 2022 | Vigilada Mineducación | Aprobada Oficialmente
+    </div>
+</footer>

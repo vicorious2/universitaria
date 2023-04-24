@@ -1,0 +1,66 @@
+<app-menu></app-menu>
+<div class="container-xxl" style="padding-top: 80px;">
+  <div class="row g-2">
+    <div class="col-sm-9 list-group">
+      <!-- 900x500 -->
+      <ul class="list-group" *ngIf="activeDataClass">
+        <li class="list-group-item" aria-current="true">
+
+          <div style="width:auto; height: 500px; border:solid 0px; text-align: center;" *ngIf="activeDataClass">
+
+            <video width="900" height="490" controls>
+              <source src="{{ urlBucket }}{{ claseActual.ruta_video }}" type="video/mp4">
+              Tu navegador no soporta los vídeos de HTML5
+            </video>
+
+          </div>
+        </li>
+      </ul>
+
+    </div>
+
+    <div class="col-sm-3">
+      <ul class="list-group" *ngIf="activeDataClass">
+        <li class="list-group-item" aria-current="true">Clases
+          <ul class="list-group list-group-flush">
+            <a class="list-group-item" style="cursor: pointer;" *ngFor="let clase of listClases"
+              (click)="getDataClass(clase.id_clase)">{{ clase.nombre }}
+            </a>
+          </ul>
+        </li>
+      </ul>
+    </div>
+
+  </div>
+  <br>
+  <div class="row g-2">
+    <div class="col-sm-9">
+
+      <ul class="list-group" *ngIf="activeDataClass">
+        <li class="list-group-item" aria-current="true">
+          <p style="font-weight: bold;color:#17A2B8 !important;">{{ claseActual.curso }}</p>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">{{ claseActual.nombre }}</li>
+            <li class="list-group-item">{{ claseActual.descripcion }}</li>
+          </ul>
+        </li>
+      </ul>
+
+    </div>
+
+    <div class="col-sm-3">
+
+      <ul class="list-group" *ngIf="activeDataClass">
+        <li class="list-group-item" aria-current="true">
+          <p style="font-weight: bold;color:#17A2B8 !important;">Recursos</p>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+              <a href="{{ urlBucket }}{{ claseActual.ruta_doc }}" target="_blank">{{ claseActual.nombre_doc }}</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+
+    </div>
+
+  </div>

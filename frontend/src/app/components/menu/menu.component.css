@@ -1,0 +1,23 @@
+body { 
+  padding-top: 64px; 
+}
+
+.angular-logo {
+    margin: 0 4px 3px 0;
+    height: 35px;
+    vertical-align: middle;
+}
+
+.fill-remaining-space {
+  flex: 1 1 auto;
+}
+
+.buscador{
+  margin-top: 0.8%;
+  font-size: 10px;
+}
+
+.sombra{
+  box-shadow: 0 3px 5px -1px #0003, 0 6px 10px #00000024, 0 1px 18px #0000001f;
+  background-color:#ffffff !important;
+}

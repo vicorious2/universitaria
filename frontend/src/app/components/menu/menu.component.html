@@ -1,0 +1,83 @@
+<!-- <mat-toolbar class="sombra">
+    <span>
+        <img src="assets/img/logo.png" class="angular-logo">
+    </span>
+
+    <span class="fill-remaining-space"></span>
+    <button mat-button>Inicio</button>
+    <button mat-button>Blog</button>
+
+    <button mat-button [matMenuTriggerFor]="cursoMenu">Cursos</button>
+        <mat-menu #cursoMenu="matMenu" yPosition="below">
+            <button mat-menu-item>Item 1</button>
+            <button mat-menu-item>Item 2</button>
+        </mat-menu>
+    
+    <mat-form-field appearance="outline" class="buscador">
+        <input matInput placeholder="Buscar Cursos">
+    </mat-form-field>
+    <button mat-stroked-button color="primary">Buscar</button>
+    
+
+    <button mat-raised-button color="primary" routerLink="login">Iniciar Sesion</button>
+    <button mat-button (click)="onLogout()">Logout</button>
+</mat-toolbar> -->
+
+<nav class="navbar navbar-expand-lg fixed-top bg-light sombra">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+            <img src="assets/img/logo.png" class="angular-logo" routerLink="/">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0 ">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" routerLink="/">Inicio</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/course">Cursos</a>
+                </li>
+                <!-- <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                        data-bs-toggle="dropdown" aria-expanded="false" routerLink="/course">
+                        Cursos
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item" href="#">curso 1</a></li>
+                        <li><a class="dropdown-item" href="#">curso 2</a></li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li><a class="dropdown-item" href="#">curso ...</a></li>
+                    </ul>
+                </li> -->
+            </ul>
+            <form class="d-flex" role="search">
+                <input class="form-control form-control-sm me-2" type="search" placeholder="Buscar Cursos" aria-label="Search">
+                <button class="btn btn-outline-primary btn-sm me-2" type="button">Buscar</button>
+            </form>
+
+            <button *ngIf="!activo" type="button" class="btn btn-primary btn-sm" routerLink="/login">Iniciar Sesion</button>
+                       
+            <ul class="navbar-nav" *ngIf="activo">
+            <li class="nav-item dropdown">
+                
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown2" role="button"
+                    data-bs-toggle="dropdown" aria-expanded="false" style="color: #17A2B8 !important;">
+                    Bienvenido {{ nameUser }}
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <li><a class="dropdown-item" routerLink="/profile">Perfil</a></li>
+                    <li>
+                        <hr class="dropdown-divider">
+                    </li>
+                    <li><a class="dropdown-item" (click)="onLogout()">Cerrar Sesion</a></li>
+                </ul>
+            </li>
+            </ul>
+        </div>
+    </div>
+</nav>

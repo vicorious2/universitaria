@@ -1,0 +1,129 @@
+<app-menu></app-menu>
+
+<!-- <div class="shadow-none p-3 mb-5 bg-light rounded">No shadow</div>
+<div class="shadow-sm p-3 mb-5 bg-white rounded">Small shadow</div>
+<div class="shadow p-3 mb-5 bg-white rounded">Regular shadow</div>
+<div class="shadow-lg p-3 mb-5 bg-white rounded">Larger shadow</div> -->
+
+<div class="container-xxl" style="padding-top: 80px;">
+
+  <div class="row">
+    <h1>Perfil</h1>
+    <hr class="border-primary border-3 w-100 text-center" style=" ">
+  </div>
+  <br>
+  <div class="row g-4">
+    <div class="col-sm-3">
+      <ul class="list-group">
+        <li class="list-group-item">
+      <div style="width:auto; height: 220px;">
+        <br>
+        <img src="assets/img/perfil.png" class="mx-auto d-block rounded-circle" style="border: 1px dashed #575F6E;" width="180" height="180">
+      </div>
+      <!-- <div class="d-grid">
+        <button class="btn btn-primary mx-auto d-block" type="button" disabled>Cambiar Foto</button>
+      </div> -->
+      </li>
+    </ul>
+    </div>
+
+    <div class="col-sm-9">
+
+      <ul class="list-group">
+        <li class="list-group-item list-group-item-primary" aria-current="true">Datos Personales: </li>
+        <li class="list-group-item">
+          
+          <div class="row mb-3">
+            <div class="col">
+              <label class="form-label">Tipo Documento</label>
+              <input type="text" class="form-control" readonly value="{{ userData.tipo_doc }}">
+            </div>
+            <div class="col">
+              <label class="form-label">Documento</label>
+              <input type="text" class="form-control" readonly value="{{ userData.documento }}">
+            </div>
+                        
+          </div>
+
+          <div class="row mb-3">
+            <div class="col">
+              <label class="form-label">Nombre</label>
+              <input type="text" class="form-control" readonly value="{{ userData.nombre }}">
+            </div>
+            <div class="col">
+              <label class="form-label">Correo</label>
+              <input type="text" class="form-control" readonly value="{{ userData.correo }}">
+            </div>
+                        
+          </div>
+          <!-- <div class="">
+            <button class="btn btn-primary mx-auto d-block" type="button">Actualizar Datos</button>
+          </div> -->
+        </li>
+      </ul>
+
+    </div>
+  </div>
+  <br><br>
+  <div class="row g-4">
+    <!-- <div class="col-sm-6">
+
+      <ul class="list-group">
+        <li class="list-group-item list-group-item-primary" aria-current="true">Progreso Cursos</li>
+        <li class="list-group-item">
+          <label class="form-label">Curso 1</label>
+          <div class="progress">
+            <div class="progress-bar bg-success" role="progressbar" style="width: 25%" aria-valuenow="25"
+              aria-valuemin="0" aria-valuemax="100"></div>
+          </div><br>
+          <label class="form-label">Curso 2</label>
+          <div class="progress">
+            <div class="progress-bar bg-info" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0"
+              aria-valuemax="100"></div>
+          </div><br>
+          <label class="form-label">Curso 3</label>
+          <div class="progress">
+            <div class="progress-bar bg-warning" role="progressbar" style="width: 75%" aria-valuenow="75"
+              aria-valuemin="0" aria-valuemax="100"></div>
+          </div><br>
+          <label class="form-label">Curso 4</label>
+          <div class="progress">
+            <div class="progress-bar bg-danger" role="progressbar" style="width: 100%" aria-valuenow="100"
+              aria-valuemin="0" aria-valuemax="100"></div>
+          </div>
+          <br>
+        </li>
+      </ul>
+
+    </div> -->
+    <div class="col-sm-2"></div>
+    <div class="col-md-8 ">
+
+      <ul class="list-group">
+        <li class="list-group-item list-group-item-primary" aria-current="true">Mis Cursos</li>
+        <li class="list-group-item">
+          <table class="table table-bordered center" style="text-align: center; ">
+            <thead>
+              <tr>
+                <th scope="col">Curso</th>
+                <th scope="col">Cantidad de clases</th>
+                <th scope="col"></th>
+              </tr>
+            </thead>
+            <tbody >
+              <tr *ngFor="let courseList of courseListRegister">
+                <td>{{ courseList.curso }}</td>
+                <td>{{ courseList.cant_clase }}</td>
+                <td>
+                  <button type="button" class="btn btn-sm btn-outline-primary position-relative" (click)="goToClass(courseList.id_curso)">Ir al Curso</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </li>
+      </ul>
+
+    </div>
+    <div class="col-sm-2"></div>
+
+  </div>
