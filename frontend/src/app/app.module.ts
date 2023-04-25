@@ -16,6 +16,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { ServiceUtils } from '@services/services-utils';
 import { CreateCourseComponent } from './pages/create-course/create-course.component';
 import { CreateClaseComponent } from './pages/create-clase/create-clase.component';
+import { CreateResourcesComponent } from './pages/create-resources/create-resources.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { CreateClaseComponent } from './pages/create-clase/create-clase.componen
     CourseComponent,
     ClassComponent,
     CreateCourseComponent,
-    CreateClaseComponent
+    CreateClaseComponent,
+    CreateResourcesComponent
   ],
   imports: [
     BrowserModule,

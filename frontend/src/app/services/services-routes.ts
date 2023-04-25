@@ -73,6 +73,14 @@ const ServicesRoutes = {
         needsAuth: true,
         url: baseUrlBackend + '/crearClase'
     },
+    getClases: {
+        needsAuth: true,
+        url: baseUrlBackend + '/listarClases'
+    },
+    crearRecurso: {
+        needsAuth: true,
+        url: baseUrlBackend + '/crearRecurso'
+    },
     
 };
 

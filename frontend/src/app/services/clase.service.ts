@@ -18,4 +18,8 @@ export class ClaseService {
     return this.serviceUtils.buildRequest(ServicesRoutes.crearClase, 'post', data);
 
   }
+
+  getClases() {
+    return this.serviceUtils.buildRequest(ServicesRoutes.getClases, 'get');
+  }
 }

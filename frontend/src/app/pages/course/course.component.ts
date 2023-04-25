@@ -122,4 +122,8 @@ export class CourseComponent implements OnInit {
   onSubmitClass(){
     this.router.navigate(['create-clase']);
   }
+
+  onSubmitResources(){
+    this.router.navigate(['create-recurso']);
+  }
 }

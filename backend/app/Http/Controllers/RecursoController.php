@@ -8,6 +8,22 @@ use Storage;
 
 class RecursoController extends Controller
 {
+    public function crearRecurso(Request $request)
+    {
+        $datos = $request->except('_token');
+
+        $recurso = new Recurso;
+        $recurso->nombre = $request['nombre'];
+        $recurso->ruta = $request['ruta'];
+        $recurso->id_tipo_recurso = $request['id_tipo_recurso'];
+        $recurso->id_clase = $request['id_clase'];
+        $recurso->save();
+        
+        return [
+            "data" => "Guardado exitosamente"
+        ];
+    }
+
     public function getResourceForIdClass($id_clase)
     {
         $datos['listResource'] = Recurso::join('tipo_recurso', 'recurso.id_tipo_recurso', '=', 'tipo_recurso.id_tipo_recurso')

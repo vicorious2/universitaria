@@ -12,6 +12,11 @@ use DB;
 
 class ClaseController extends Controller
 {
+    public function getAllClases()
+    {
+        return Clase::all();
+    }
+
     public function index()
     {
         $datos['datosResult'] = Clase::join('curso', 'clase.id_curso', '=', 'curso.id_curso')

@@ -47,5 +47,10 @@ Route::get('getAllCursos', [CursoController::class, 'getAllCursos']);
 
 Route::post('crearClase', [ClaseController::class, 'crearClase']);
 
+Route::get('listarClases', [ClaseController::class, 'getAllClases']);
+
+Route::post('crearRecurso', [RecursoController::class, 'crearRecurso']);
+
+
 
 

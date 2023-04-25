@@ -1,0 +1,69 @@
+<app-menu></app-menu>
+
+<form [formGroup]="resourcesForm" class="login-form" (ngSubmit)="onFormSubmit()">
+<div class="container-xxl" style="padding-top: 80px;">
+    <div class="col-sm-9">
+
+        <ul class="list-group">
+          <li class="list-group-item list-group-item-primary" aria-current="true">Crear Recurso: </li>
+          <li class="list-group-item">
+            
+            <div class="row mb-3">
+              <div class="col">
+                <mat-form-field class="w-100" appearance="outline">
+                    <mat-label class="form-label">Nombre</mat-label>
+                    <input matInput formControlName="nombre" type="text" class="form-control" required>
+                    <mat-hint></mat-hint>
+                </mat-form-field>
+                
+              </div>
+
+                          
+            </div>
+  
+            <div class="row mb-3">
+                <div class="col">
+                    <mat-form-field class="w-100" appearance="outline">
+                        <mat-label class="form-label">Ruta</mat-label>
+                        <input matInput formControlName="ruta" type="area" class="form-control" rows="6" required>
+                        <mat-hint></mat-hint>
+                    </mat-form-field>
+                  </div>
+                          
+            </div>
+
+            <div class="row mb-3">
+                <div class="col">
+                    <mat-form-field class="w-100" appearance="outline">
+                        <mat-label class="form-label">Tipo recurso  </mat-label>
+                        <mat-select formControlName="tiporecurso" name="categoria" required>
+                          <mat-option *ngFor="let type of tipo_recursos" [value]="type.id_curso">
+                              {{type.nombre}}
+                          </mat-option>
+                      </mat-select>
+                    </mat-form-field>
+                </div>  
+
+                <div class="col">
+                    <mat-form-field class="w-100" appearance="outline">
+                        <mat-label class="form-label">Clase  </mat-label>
+                        <mat-select formControlName="clase" name="categoria" required>
+                          <mat-option *ngFor="let type of clases" [value]="type.id_curso">
+                              {{type.nombre}}
+                          </mat-option>
+                      </mat-select>
+                    </mat-form-field>
+                </div>  
+
+              </div>
+
+              <mat-error> {{ messageError }} </mat-error>
+              <br>
+              <button [disabled]="!resourcesForm.valid" mat-flat-button id="login-button" type="submit" color="primary-blue"
+                  class="btn btn-primary w-100">Crear recurso</button>
+          </li>
+        </ul>
+  
+      </div>
+</div>
+</form>

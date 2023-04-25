@@ -8,6 +8,7 @@ import { ProfileComponent } from '../pages/profile/profile.component';
 import { SessionAuthGuard } from '@guards/session-auth.guard';
 import { CreateCourseComponent } from '../pages/create-course/create-course.component';
 import { CreateClaseComponent } from '../pages/create-clase/create-clase.component';
+import { CreateResourcesComponent } from '../pages/create-resources/create-resources.component';
 
 const routes: Routes = [
   {
@@ -38,6 +39,10 @@ const routes: Routes = [
   {
     path: 'create-clase',
     component: CreateClaseComponent
+  },
+  {
+    path: 'create-recurso',
+    component: CreateResourcesComponent
   }
 
 ];
