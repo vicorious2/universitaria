@@ -111,8 +111,10 @@ export class CourseComponent implements OnInit {
 
     if(!cursoRegistrado){
       this.courseService.inscribirCurso(idCourse, idUser)!.subscribe((responseRegister) => {
-        if(responseRegister){          
-          this.mailService.sendMail('email=enslavement32@gmail.com')!.subscribe((mail) => {
+        if(responseRegister){  
+          let body = new URLSearchParams();
+          body.set("email", userData.correo)        
+          this.mailService.sendMail(body)!.subscribe((mail) => {
             console.log(mail);
           });
           this.router.navigateByUrl('/class');

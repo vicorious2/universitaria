@@ -10,6 +10,6 @@ export class MailService {
   constructor(private serviceUtils: ServiceUtils) { }
 
   sendMail(data: any) {
-    return this.serviceUtils.buildRequest(ServicesRoutes.enviarMail, 'post', data);
+    return this.serviceUtils.buildRequest(ServicesRoutes.enviarMail, 'post', data, 'form-urlencoded');
   }
 }

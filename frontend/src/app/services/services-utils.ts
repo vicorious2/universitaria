@@ -77,6 +77,9 @@ export class ServiceUtils {
         // if (isTextResponse) {
         //   headers['responseType'] = 'text';
         // }
+            if (isTextResponse == 'form-urlencoded') {
+              headers.headers.set('Content-Type', 'application/x-www-form-urlencoded');
+            }
 
         return this.http.post<any>(endpoint.url, data, headers);
       case 'put':
