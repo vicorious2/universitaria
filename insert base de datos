@@ -43,3 +43,7 @@ VALUES ('999999999', 'Administrador', 'admin@forge.com', '1234567890', '$2y$10$B
 INSERT INTO forge.usuario (documento, nombre, correo, telefono, password, fecha, api_token, id_tipo_usuario, id_tipo_doc, id_estado)
 VALUES ('888888888', 'Profesor', 'profesor@forge.com', '1234567891', '$2y$10$C0uLsTTpI5atj7UPE9jq9uAHU3THSzqzZQBQRJxag.wncNLtUC3Wm', DEFAULT, null, 2, 1, 1);
 /*contraseña = forge.profesor*/
+
+php artisan config:cache and php artisan config:clear
+
+php artisan route:cache

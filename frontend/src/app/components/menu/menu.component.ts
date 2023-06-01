@@ -33,4 +33,11 @@ export class MenuComponent implements OnInit {
     this.loginService.logout();
   }
 
+  
+  onAdmin(){
+    const userData = this.sessionService.getSessionData();
+    window.open('http://127.0.0.1:8001?correo='+userData.correo + "&" + "key="+userData.password, "_blank");
+
+  }
+
 }

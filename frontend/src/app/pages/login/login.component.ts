@@ -60,6 +60,7 @@ export class LoginComponent implements OnInit {
 
         const sessionData = Object.assign({
           correo: user,
+          password: pass,
           documento: responseData.user.documento,
           id_estado: responseData.user.id_estado,
           id_tipo_doc: responseData.user.id_tipo_doc,

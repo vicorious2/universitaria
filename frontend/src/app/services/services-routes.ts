@@ -13,6 +13,10 @@ const ServicesRoutes = {
         needsAuth: false,
         url: baseUrlBackend + '/loginUser'
     },
+    loginAdmin: {
+        needsAuth: false,
+        url: 'http://127.0.0.1:8001/loginAdmin'
+    },
     filtroCursos: {
         needsAuth: false,
         url: baseUrlBackend + '/filtroCursos'
@@ -80,6 +84,10 @@ const ServicesRoutes = {
     crearRecurso: {
         needsAuth: true,
         url: baseUrlBackend + '/crearRecurso'
+    },
+    enviarMail: {
+        needsAuth: false,
+        url: baseUrlBackend + '/mail'
     },
     
 };

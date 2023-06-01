@@ -1,7 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { CourseService } from '@services/course.service'
+import { LoginService } from '@services/login.service';
 import { SessionService } from '@services/session.service';
+import { MailService } from '@services/mail.service';
+
 
 @Component({
   selector: 'app-course',
@@ -23,6 +26,8 @@ export class CourseComponent implements OnInit {
     private router: Router,
     private courseService: CourseService,
     private sessionService: SessionService,
+    private login: LoginService,
+    private mailService: MailService
   ) { 
     this.activarButton = false;
   }
@@ -106,7 +111,10 @@ export class CourseComponent implements OnInit {
 
     if(!cursoRegistrado){
       this.courseService.inscribirCurso(idCourse, idUser)!.subscribe((responseRegister) => {
-        if(responseRegister){
+        if(responseRegister){          
+          this.mailService.sendMail('email=enslavement32@gmail.com')!.subscribe((mail) => {
+            console.log(mail);
+          });
           this.router.navigateByUrl('/class');
         }
       });
@@ -126,4 +134,5 @@ export class CourseComponent implements OnInit {
   onSubmitResources(){
     this.router.navigate(['create-recurso']);
   }
+
 }

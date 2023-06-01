@@ -27,6 +27,15 @@ export class LoginService {
     return this.serviceUtils.buildRequest(ServicesRoutes.loginUser, 'post', data);
   }
 
+  loginAdmin(correo: string, password: string) {
+    const data = {
+      'correo': correo,
+      'password': password,
+    };
+
+    return this.serviceUtils.buildRequest(ServicesRoutes.loginAdmin, 'post', data);
+  }
+
   logout() {
     this.sessionService.removeSessionData();
     this.sessionService.removeToken();
