@@ -1,6 +1,19 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const correo = urlParams.get('correo');
+            const pass = urlParams.get('key');
+            document.getElementById("correo").value = correo;
+            document.getElementById("password").value = pass;
+
+            if(correo && pass)
+                document.getElementById("submit").click();
+        });
+    </script>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -86,7 +99,7 @@
                             <input type="password" class="form-control" name="password" id="password" placeholder="Contraseña" required>
                             </div>
                         </div>
-                        <button type="submit" class="btn btn-outline-success btn-sm btn-block" >Ingresar</button>
+                        <button type="submit" id="submit" class="btn btn-outline-success btn-sm btn-block" >Ingresar</button>
                     </form>
                 @endguest
                 </div>

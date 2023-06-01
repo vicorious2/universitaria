@@ -15,12 +15,23 @@ class LoginController extends Controller
             'correo' => ['required', 'email'],
             'password' => ['required'],
         ]);
+
+        $out = new \Symfony\Component\Console\Output\ConsoleOutput();
+        $out->writeln(Auth::user());
+
+        //datos de ususario diferentes de administrador
+        $user = User::where([
+            ['correo', '=', $request->correo]
+        ])->firstOrFail();
+
+        Auth::login($user);
        
-        if (Auth::attempt(['correo' => $request->correo, 'password' =>  $request->password, 'id_estado' => 1, 'id_tipo_usuario' => 1])) {
+        if (Auth::attempt(['correo' => $request->correo, 'password' =>  $request->password])) {
             
             $request->session()->regenerate();
 
-            return redirect()->intended('/')->with('Mensaje','Bienvenido!');;
+            return redirect()->intended('/')->with('Mensaje','Bienvenido!');
+
         }
 
         return back()->withErrors([

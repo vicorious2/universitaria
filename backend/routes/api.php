@@ -12,6 +12,7 @@ use App\Http\Controllers\NivelController;
 use App\Http\Controllers\CategoriaController;
 use App\Http\Controllers\CursoController;
 use App\Http\Controllers\ClaseController;
+use App\Http\Controllers\MailController;
 
 
 Route::middleware('auth:sanctum')->group(function () {
@@ -42,14 +43,14 @@ Route::get('listarNiveles', [NivelController::class, 'getAllNiveles']);
 Route::get('listarCategorias', [CategoriaController::class, 'getAllCategorias']);
 
 Route::post('crearCurso', [CursoController::class, 'crearCurso']);
-
 Route::get('getAllCursos', [CursoController::class, 'getAllCursos']);
 
 Route::post('crearClase', [ClaseController::class, 'crearClase']);
-
-Route::get('listarClases', [ClaseController::class, 'getAllClases']);
+Route::get('/listaClases', [ClaseController::class, 'getAllClases']);
 
 Route::post('crearRecurso', [RecursoController::class, 'crearRecurso']);
+
+Route::post('/mail', [MailController::class, 'subscribe']);
 
 
 
