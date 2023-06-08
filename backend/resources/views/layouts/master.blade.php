@@ -28,11 +28,12 @@
           @auth
           <div class="list-group">
             <!-- Parametrizacion -->
-            <a href="{{ url('usuario') }}" class="list-group-item list-group-item-action list-group-item">GESTION USUARIOS</a>
+            @if (Auth::user()->id_tipo_usuario == 1)  <a href="{{ url('usuario') }}" class="list-group-item list-group-item-action list-group-item">GESTION USUARIOS</a> @endif
             <a href="{{ url('curso') }}" class="list-group-item list-group-item-action list-group-item">GESTION CURSOS</a>
             <a href="{{ url('clase') }}" class="list-group-item list-group-item-action list-group-item">GESTION CLASES</a>
           </div>
 
+          @if (Auth::user()->id_tipo_usuario == 1)              
           <div class="accordion" id="accordionExample" style="width: 15rem;">
             <div class="card">
               <div class="card-header" id="headingOne">
@@ -58,6 +59,7 @@
               </div>
             </div>
           </div>
+          @endif
         @endauth
 
         </div>

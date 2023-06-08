@@ -8,12 +8,14 @@
 
           <div style="width:auto; height: 500px; border:solid 0px; text-align: center;" *ngIf="activeDataClass">
 
-            <video width="900" height="490" controls>
+            <video (click)="startVideo()" width="900" height="490" controls #videoPlayer>
               <source src="{{ urlBucket }}{{ claseActual.ruta_video }}" type="video/mp4">
               Tu navegador no soporta los vídeos de HTML5
             </video>
 
           </div>
+
+          <p>Video clicked: {{videoClicked}}</p>
         </li>
       </ul>
 
@@ -59,8 +61,14 @@
             </li>
           </ul>
         </li>
+        <li *ngIf="activateCertificate" class="list-group-item">
+          <a class="btn btn-outline-primary" target="_blank" href="{{ url }}/pdf/pdf.ejemplo/certificacion.pdf/11/alejo">Generar certificado</a>
+          <!--button class="btn btn-outline-primary" type="button" (click)="generateCertificate()">Generar certificado</button-->
+        </li>
       </ul>
 
     </div>
+
+    
 
   </div>

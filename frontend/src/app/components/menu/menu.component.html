@@ -40,8 +40,8 @@
                 <li class="nav-item">
                     <a class="nav-link" routerLink="/course">Cursos</a>
                 </li>
-                <li class="nav-item" style="cursor: pointer;">
-                    <a class="nav-link" (click)="onAdmin()">CREAR</a>
+                <li *ngIf="activo" class="nav-item" style="cursor: pointer;">
+                    <a class="nav-link" (click)="onAdmin()">Gestionar CURSOS Y CLASES</a>
                 </li>
                 <!-- <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"

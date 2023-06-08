@@ -13,6 +13,7 @@ use App\Http\Controllers\CategoriaController;
 use App\Http\Controllers\CursoController;
 use App\Http\Controllers\ClaseController;
 use App\Http\Controllers\MailController;
+use App\Http\Controllers\PDFController;
 
 
 Route::middleware('auth:sanctum')->group(function () {
@@ -51,6 +52,9 @@ Route::get('/listaClases', [ClaseController::class, 'getAllClases']);
 Route::post('crearRecurso', [RecursoController::class, 'crearRecurso']);
 
 Route::post('/mail', [MailController::class, 'subscribe']);
+
+Route::get('/pdf/{view}/{fileName}/{course}/{name}', [PDFController::class, 'imprimir']);
+Route::post('/pdf', [PDFController::class, 'imprimirParams']);
 
 
 

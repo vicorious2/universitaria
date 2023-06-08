@@ -89,6 +89,10 @@ const ServicesRoutes = {
         needsAuth: false,
         url: baseUrlBackend + '/mail'
     },
+    pdf: {
+        needsAuth: false,
+        url: baseUrlBackend + '/pdf/:view/:fileName/:course/:name'
+    }
     
 };
 
