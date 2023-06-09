@@ -115,7 +115,7 @@ export class CourseComponent implements OnInit {
           let body = new URLSearchParams();
           body.set("email", userData.correo)        
           this.mailService.sendMail(body)!.subscribe((mail) => {
-            console.log(mail);
+            alert(mail);
           });
           this.router.navigateByUrl('/class');
         }
