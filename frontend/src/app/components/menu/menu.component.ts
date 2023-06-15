@@ -11,6 +11,7 @@ export class MenuComponent implements OnInit {
 
   activo: boolean;
   nameUser : any;
+  tipoUsuario: any;
 
   constructor(
     private sessionService: SessionService,
@@ -22,8 +23,10 @@ export class MenuComponent implements OnInit {
 
   ngOnInit(): void {
     const userData = this.sessionService.getSessionData();
+
     
     if(userData != null && userData.length !== 0){
+      this.tipoUsuario = userData.id_tipo_usuario;
       this.activo = true;
       this.nameUser = userData.nombre;
     }

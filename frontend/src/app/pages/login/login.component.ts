@@ -15,6 +15,7 @@ export class LoginComponent implements OnInit {
 
   loginForm;
   identificationTypes: any;
+  tipoUsuario: any;
   messageError: string;
 
   constructor(
@@ -46,6 +47,10 @@ export class LoginComponent implements OnInit {
     const user = this.loginForm.get("usuario")?.value;
     const pass = this.loginForm.get("contrasena")?.value;
     const typeUser = this.loginForm.get("tipoUsuario")?.value;
+
+    this.tipoUsuario = typeUser;
+
+    console.log(typeUser);
     
     this.loginService.login(user,typeUser,pass).subscribe((responseData) => {
       if (responseData.token) {

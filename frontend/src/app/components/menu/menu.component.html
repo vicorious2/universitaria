@@ -40,7 +40,7 @@
                 <li class="nav-item">
                     <a class="nav-link" routerLink="/course">Cursos</a>
                 </li>
-                <li *ngIf="activo" class="nav-item" style="cursor: pointer;">
+                <li *ngIf="activo && tipoUsuario == '2' " class="nav-item" style="cursor: pointer;">
                     <a class="nav-link" (click)="onAdmin()">Gestionar CURSOS Y CLASES</a>
                 </li>
                 <!-- <li class="nav-item dropdown">
