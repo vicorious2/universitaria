@@ -4,6 +4,7 @@ import { CourseService } from '@services/course.service';
 import { PdfService } from '@services/pdf.service'
 import { Config } from '@config/index';
 import {ElementRef} from '@angular/core';
+import { SessionService } from '@services/session.service';
 
 
 @Component({
@@ -21,6 +22,7 @@ export class ClassComponent implements OnInit {
   urlBucket: any;
   url: any;
   idCurso:any;
+  name:any;
   idClass:any;
   listClases: any;
   claseActual: any;
@@ -33,7 +35,8 @@ export class ClassComponent implements OnInit {
   constructor(
     private router: Router,
     private courseService: CourseService,
-    private pdfService: PdfService
+    private pdfService: PdfService,
+    private sessionService: SessionService
   ) {
     this.urlBucket = Config.aws.baseUrlBucket;
     this.url =  Config.api.baseUrlBackend;
@@ -45,6 +48,9 @@ export class ClassComponent implements OnInit {
   ngOnInit(): void {
 
     this.idCurso = sessionStorage.getItem('idCurso');
+
+    const data = this.sessionService.getSessionData();
+    this.name = data.nombre;
     
     if(!this.idCurso){
       this.router.navigateByUrl('/course');
