@@ -17,6 +17,7 @@ export class LoginComponent implements OnInit {
   identificationTypes: any;
   tipoUsuario: any;
   messageError: string;
+  hide = true;
 
   constructor(
     private router: Router,
@@ -31,6 +32,8 @@ export class LoginComponent implements OnInit {
     });
     this.messageError= '';
   }
+
+  get passwordInput() { return this.loginForm.get('contrasena'); }  
 
   ngOnInit(): void {
     this.loginService.logout();

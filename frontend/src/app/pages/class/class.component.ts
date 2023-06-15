@@ -24,12 +24,12 @@ export class ClassComponent implements OnInit {
   idCurso:any;
   name:any;
   idClass:any;
-  listClases: any;
+  listClases: any[];
   claseActual: any;
   activeDataClass: boolean;
 
   clickedClaases: any[];
-  activateCertificate: boolean;
+  static activateCertificate: boolean = false;
   
 
   constructor(
@@ -42,7 +42,7 @@ export class ClassComponent implements OnInit {
     this.url =  Config.api.baseUrlBackend;
     this.activeDataClass = false;
     this.clickedClaases = []
-    this.activateCertificate = false;
+    this.listClases = []
    }
 
   ngOnInit(): void {
@@ -95,8 +95,8 @@ export class ClassComponent implements OnInit {
   }
 
   startVideo(): void {
+    var video = this.videoPlayer;
     this.videoPlayer.nativeElement.load();
-    console.log(this.videoPlayer.nativeElement);
     var idClass = this.claseActual.id_clase;
     var data = this.clickedClaases.filter(element => {
       return element == idClass;
@@ -106,12 +106,50 @@ export class ClassComponent implements OnInit {
       this.clickedClaases.push(idClass);
     }
 
-    if(this.listClases.length == this.clickedClaases.length){
+    /*if(this.listClases.length == this.clickedClaases.length){
       this.activateCertificate = true;
-    }
+    }*/
+
+    var clases = this.listClases;
+    var clicked = this.clickedClaases;
+    var certificate = ClassComponent.activateCertificate;
+    var id = setInterval(function(){
+      console.log(video.nativeElement.currentTime);
+      console.log(video.nativeElement.duration);
+      var finaltime = Math.round(video.nativeElement.duration);
+      var time = Math.round(video.nativeElement.currentTime);
+      if(time == finaltime)
+      {
+        console.log(clases.length)
+        console.log(clicked.length)
+        if(clases.length == clicked.length){
+          ClassComponent.activateCertificate = true;
+          console.log('Certifico');
+          console.log(ClassComponent.activateCertificate);
+        }
+        console.log('Termino');
+        clearInterval(id);
+      }
+      
+      },1000);
 
     this.videoClicked = true;
     this.videoPlayer.nativeElement.play();
+  }
+
+
+  play(){
+    this.videoPlayer.nativeElement.play();
+    this.startVideo();
+  }
+
+  pause(){
+    this.videoPlayer.nativeElement.pause();
+
+  }
+
+  get staticCertificate() {
+    return ClassComponent.activateCertificate;
   }
 
 }
