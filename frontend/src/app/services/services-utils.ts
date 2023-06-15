@@ -78,6 +78,7 @@ export class ServiceUtils {
         //   headers['responseType'] = 'text';
         // }
             if (isTextResponse == 'form-urlencoded') {
+              headers.headers.delete('Content-Type');
               headers.headers.set('Content-Type', 'application/x-www-form-urlencoded');
             }
 

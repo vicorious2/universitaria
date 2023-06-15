@@ -32,7 +32,7 @@ class SendMail extends Mailable
      */
     public function build()
     {
-        return $this->subject('Gracias por suscribirte las curso!!!')
+        return $this->subject('Gracias por suscribirte al curso!!!')
                     ->markdown('mail.mail');
     }
 }
